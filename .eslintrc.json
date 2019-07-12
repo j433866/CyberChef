@@ -68,14 +68,6 @@
         }],
         "semi": ["error", "always"],
         "unicode-bom": "error",
-        "require-jsdoc": ["error", {
-            "require": {
-                "FunctionDeclaration": true,
-                "MethodDefinition": true,
-                "ClassDeclaration": true,
-                "ArrowFunctionExpression": true
-            }
-        }],
         "keyword-spacing": ["error", {
             "before": true,
             "after": true
@@ -89,8 +81,28 @@
         "operator-linebreak": ["error", "after"],
         "space-in-parens": "error",
         "no-var": "error",
-        "prefer-const": "error"
+        "prefer-const": "error",
+        "jsdoc/check-alignment": ["error"],
+        "jsdoc/check-indentation": ["error"],
+        "jsdoc/check-param-names": ["error"],
+        "jsdoc/newline-after-description": ["error"],
+        "jsdoc/require-returns-check": ["error"],
+        "jsdoc/require-returns-type": ["error"],
+        "jsdoc/require-param": ["error"],
+        "jsdoc/require-param-name": ["error"],
+        "jsdoc/require-param-type": ["warn"],
+        "jsdoc/require-jsdoc": ["error", {
+            "require": {
+                "FunctionDeclaration": true,
+                "MethodDefinition": true,
+                "ClassDeclaration": true,
+                "ArrowFunctionExpression": true
+            }
+        }]
     },
+    "plugins": [
+        "jsdoc"
+    ],
     "overrides": [
         {
             "files": "tests/**/*",
@@ -99,6 +111,14 @@
                 "no-console": "off"
             }
         }
+        // Ideally any function in lib or Utils should have an example
+        // Commenting out for now as most of lib doesn't have examples
+        // {
+        //     "files": ["src/core/lib/*", "src/core/Utils.*"],
+        //     "rules": {
+        //         "jsdoc/require-example": ["warn"]
+        //     }
+        // }
     ],
     "globals": {
         "$": false,
