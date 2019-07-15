@@ -64,7 +64,7 @@ export function xor(operand, key) {
  * @param {number} operand
  * @returns {number}
  */
-export function not(operand, _) {
+export function not(operand) {
     return ~operand & 0xff;
 }
 

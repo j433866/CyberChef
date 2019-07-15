@@ -1,5 +1,6 @@
 /**
  * Media operation tests.
+ *
  * @author anthony-arnold [anthony.arnold@uqconnect.edu.au]
  * @copyright Crown Copyright 2018
  * @license Apache-2.0

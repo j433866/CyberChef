@@ -229,6 +229,8 @@ export class Reflector extends PairMapBase {
     /**
      * Reflector constructor. See PairMapBase.
      * Additional restriction: every character must be accounted for.
+     *
+     * @param pairs
      */
     constructor(pairs) {
         super(pairs, "Reflector");
@@ -260,6 +262,8 @@ export class Reflector extends PairMapBase {
 export class Plugboard extends PairMapBase {
     /**
      * Plugboard constructor. See PairMapbase.
+     *
+     * @param pairs
      */
     constructor(pairs) {
         super(pairs, "Plugboard");

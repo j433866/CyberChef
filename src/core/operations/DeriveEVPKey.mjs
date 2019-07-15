@@ -83,7 +83,7 @@ export default DeriveEVPKey;
 /**
  * Overwriting the CryptoJS OpenSSL key derivation function so that it is possible to not pass a
  * salt in.
-
+ *
  * @param {string} password - The password to derive from.
  * @param {number} keySize - The size in words of the key to generate.
  * @param {number} ivSize - The size in words of the IV to generate.

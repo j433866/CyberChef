@@ -142,6 +142,7 @@ class ContainImage extends Operation {
 
     /**
      * Displays the contained image using HTML for web apps
+     *
      * @param {ArrayBuffer} data
      * @returns {html}
      */

@@ -65,6 +65,7 @@ class NormaliseImage extends Operation {
 
     /**
      * Displays the normalised image using HTML for web apps
+     *
      * @param {ArrayBuffer} data
      * @returns {html}
      */

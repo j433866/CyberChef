@@ -86,7 +86,7 @@ class TabWaiter {
     /**
      * Gets the li element for an input tab of the given input number
      *
-     * @param {inputNum} - The inputNum of the tab we're trying to get
+     * @param {number} inputNum - The inputNum of the tab we're trying to get
      * @returns {Element}
      */
     getInputTabItem(inputNum) {

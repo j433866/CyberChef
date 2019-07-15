@@ -25,7 +25,7 @@ class App {
      * @param {CatConf[]} categories - The list of categories and operations to be populated.
      * @param {Object.<string, OpConf>} operations - The list of operation configuration objects.
      * @param {String[]} defaultFavourites - A list of default favourite operations.
-     * @param {Object} options - Default setting for app options.
+     * @param {Object} defaultOptions - Default setting for app options.
      */
     constructor(categories, operations, defaultFavourites, defaultOptions) {
         this.categories    = categories;
@@ -365,7 +365,7 @@ class App {
     /**
      * Filters the list of favourite operations that the user had stored and removes any that are no
      * longer available. The user is notified if this is the case.
-
+     *
      * @param {string[]} favourites - A list of the user's favourite operations
      * @returns {string[]} A list of the valid favourites
      */

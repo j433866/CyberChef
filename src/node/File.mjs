@@ -22,7 +22,7 @@ class File {
      *
      * https://w3c.github.io/FileAPI/#file-constructor
      *
-     * @param {String|Array|ArrayBuffer|Buffer|[File]} bits - file content
+     * @param {String|Array|ArrayBuffer|Buffer|[File]} data - file content
      * @param {String} name (optional) - file name
      * @param {Object} stats (optional) - file stats e.g. lastModified
      */

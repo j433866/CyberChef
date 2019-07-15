@@ -81,6 +81,7 @@ class ImageFilter extends Operation {
 
     /**
      * Displays the blurred image using HTML for web apps
+     *
      * @param {ArrayBuffer} data
      * @returns {html}
      */

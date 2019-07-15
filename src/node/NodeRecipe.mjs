@@ -16,7 +16,8 @@ class NodeRecipe {
 
     /**
      * Recipe constructor
-     * @param recipeConfig
+     *
+     * @param {String | Function | String[] | Function[] | [String | Function]} recipeConfig
      */
     constructor(recipeConfig) {
         this._parseConfig(recipeConfig);
@@ -25,6 +26,7 @@ class NodeRecipe {
 
     /**
      * Validate an ingredient $ coerce to operation if necessary.
+     *
      * @param {String | Function | Object} ing
      */
     _validateIngredient(ing) {
@@ -56,6 +58,7 @@ class NodeRecipe {
 
     /**
      * Parse config for recipe.
+     *
      * @param {String | Function | String[] | Function[] | [String | Function]} recipeConfig
      */
     _parseConfig(recipeConfig) {
@@ -73,6 +76,7 @@ class NodeRecipe {
 
     /**
      * Run the dish through each operation, one at a time.
+     *
      * @param {NodeDish} dish
      * @returns {NodeDish}
      */

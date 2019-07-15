@@ -12,6 +12,8 @@ class DishType {
 
     /**
      * Warn translations dont work without value from bind
+     *
+     * @param {*} value
      */
     static checkForValue(value) {
         if (value === undefined) {
@@ -21,7 +23,6 @@ class DishType {
 
     /**
      * convert the given value to a ArrayBuffer
-     * @param {*} value
      */
     static toArrayBuffer() {
         throw new Error("toArrayBuffer has not been implemented");
@@ -29,6 +30,7 @@ class DishType {
 
     /**
      * convert the given value from a ArrayBuffer
+     *
      * @param {boolean} notUTF8
      */
     static fromArrayBuffer(notUTF8=undefined) {

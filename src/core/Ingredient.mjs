@@ -95,7 +95,7 @@ class Ingredient {
      *
      * @param {*} data
      * @param {string} type - The name of the data type.
-    */
+     */
     static prepare(data, type) {
         let number;
 

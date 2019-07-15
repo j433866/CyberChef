@@ -193,7 +193,7 @@ export function ipv6HyphenatedRange(range, includeNetworkInfo) {
  * Parses a list of IPv4 addresses separated by a new line (\n) and displays information
  * about it.
  *
- * @param {RegExp} list
+ * @param {RegExp} match
  * @param {boolean} includeNetworkInfo
  * @param {boolean} enumerateAddresses
  * @param {boolean} allowLargeList
@@ -231,7 +231,7 @@ export function ipv4ListedRange(match, includeNetworkInfo, enumerateAddresses, a
  * Parses a list of IPv6 addresses separated by a new line (\n) and displays information
  * about it.
  *
- * @param {RegExp} list
+ * @param {RegExp} match
  * @param {boolean} includeNetworkInfo
  * @returns {string}
  */
@@ -300,6 +300,8 @@ export function strToIpv4(ipStr) {
 
     /**
      * Converts a list of 4 numeric strings in the range 0-255 to a list of numbers.
+     *
+     * @param {string[]} blocks
      */
     function parseBlocks(blocks) {
         if (blocks.length !== 4)
@@ -364,6 +366,8 @@ export function strToIpv6(ipStr) {
 
     /**
      * Converts a list of 3-8 numeric hex strings in the range 0-65535 to a list of numbers.
+     *
+     * @param {string[]} blocks
      */
     function parseBlocks(blocks) {
         if (blocks.length < 3 || blocks.length > 8)

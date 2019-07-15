@@ -162,10 +162,8 @@ class Dish {
     /**
      * Sets the data value and type and then validates them.
      *
-     * @param {*} value
-     *     - The value of the input data.
-     * @param {number} type
-     *     - The data type of value, see Dish enums.
+     * @param {*} value - The value of the input data.
+     * @param {number} type - The data type of value, see Dish enums.
      */
     set(value, type) {
         if (typeof type === "string") {
@@ -201,6 +199,7 @@ class Dish {
 
     /**
      * Detects the MIME type of the current dish
+     *
      * @returns {string}
      */
     detectDishType() {
@@ -258,7 +257,7 @@ class Dish {
      * May have to disable parts of BYTE_ARRAY validation if it effects performance.
      *
      * @returns {boolean} Whether the data is valid or not.
-    */
+     */
     valid() {
         switch (this.type) {
             case Dish.BYTE_ARRAY:
@@ -304,7 +303,7 @@ class Dish {
      * we measure how many bytes are taken up when the number is written as a string.
      *
      * @returns {number}
-    */
+     */
     get size() {
         switch (this.type) {
             case Dish.BYTE_ARRAY:
@@ -469,7 +468,7 @@ class Dish {
      *
      * @param {number} toType - the Dish enum to convert to
      * @param {boolean} [notUTF8=false] - Do not treat strings as UTF8.
-    */
+     */
     _fromArrayBuffer(toType, notUTF8) {
 
         // Using 'bind' here to allow this.value to be mutated within translation functions
@@ -498,57 +497,66 @@ class Dish {
 
 /**
  * Dish data type enum for byte arrays.
+ *
  * @readonly
  * @enum
  */
 Dish.BYTE_ARRAY = 0;
 /**
  * Dish data type enum for strings.
+ *
  * @readonly
  * @enum
  */
 Dish.STRING = 1;
 /**
  * Dish data type enum for numbers.
+ *
  * @readonly
  * @enum
  */
 Dish.NUMBER = 2;
 /**
  * Dish data type enum for HTML.
+ *
  * @readonly
  * @enum
  */
 Dish.HTML = 3;
 /**
  * Dish data type enum for ArrayBuffers.
+ *
  * @readonly
  * @enum
  */
 Dish.ARRAY_BUFFER = 4;
 /**
  * Dish data type enum for BigNumbers.
+ *
  * @readonly
  * @enum
  */
 Dish.BIG_NUMBER = 5;
 /**
  * Dish data type enum for JSON.
+ *
  * @readonly
  * @enum
  */
 Dish.JSON = 6;
 /**
  * Dish data type enum for lists of files.
+ *
  * @readonly
  * @enum
  */
 Dish.FILE = 7;
 /**
-* Dish data type enum for lists of files.
-* @readonly
-* @enum
-*/
+ * Dish data type enum for lists of files.
+ *
+ * @readonly
+ * @enum
+ */
 Dish.LIST_FILE = 8;
 
 

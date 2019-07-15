@@ -73,6 +73,7 @@ class FrequencyDistribution extends Operation {
      * Displays the frequency distribution as a bar chart for web apps.
      *
      * @param {json} freq
+     * @param {Object[]} args
      * @returns {html}
      */
     present(freq, args) {

@@ -49,6 +49,8 @@ class SeasonalWaiter {
      * Listen for the Konami code sequence of keys. Turn the page upside down if they are all heard in
      * sequence.
      * #konamicode
+     *
+     * @param {event} e
      */
     konamiCodeListener(e) {
         this.kkeys.push(e.keyCode);

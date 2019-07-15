@@ -125,6 +125,7 @@ class ResizeImage extends Operation {
 
     /**
      * Displays the resized image using HTML for web apps
+     *
      * @param {ArrayBuffer} data
      * @returns {html}
      */

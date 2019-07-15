@@ -14,7 +14,6 @@ class DishHTML extends DishString {
 
     /**
      * convert the given value to a ArrayBuffer
-     * @param {String} value
      */
     static toArrayBuffer() {
         DishHTML.checkForValue(this.value);

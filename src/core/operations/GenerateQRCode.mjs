@@ -71,6 +71,7 @@ class GenerateQRCode extends Operation {
      * Displays the QR image using HTML for web apps
      *
      * @param {ArrayBuffer} data
+     * @param {Object[]} args
      * @returns {html}
      */
     present(data, args) {

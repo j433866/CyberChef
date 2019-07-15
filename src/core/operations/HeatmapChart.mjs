@@ -223,9 +223,9 @@ class HeatmapChart extends Operation {
     /**
      * Packs a list of x, y coordinates into a number of bins for use in a heatmap.
      *
-     * @param {Object[]} points
-     * @param {number} number of vertical bins
-     * @param {number} number of horizontal bins
+     * @param {Object[]} values
+     * @param {number} vBins number of vertical bins
+     * @param {number} hBins number of horizontal bins
      * @returns {Object[]} a list of bins (each bin is an Array) with x y coordinates, filled with the points
      */
     getHeatmapPacking(values, vBins, hBins) {

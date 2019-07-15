@@ -79,6 +79,7 @@ class SetUnion extends Operation {
 
         /**
          * Only add non-existing items
+         *
          * @param {Object} hash
          */
         const addUnique = (hash) => (item) => {

@@ -1,5 +1,6 @@
 /**
  * Some parts taken from mimelib (http://github.com/andris9/mimelib)
+ *
  * @author Andris Reinman
  * @license MIT
  *

@@ -20,6 +20,7 @@ import {Rotor, Plugboard, a2i, i2a} from "./Enigma.mjs";
 class CopyRotor extends Rotor {
     /**
      * Return a copy of this Rotor.
+     *
      * @returns {Object}
      */
     copy() {
@@ -43,6 +44,7 @@ class CopyRotor extends Rotor {
 class Node {
     /**
      * Node constructor.
+     *
      * @param {number} letter - The plain/ciphertext letter this node represents (as a number).
      */
     constructor(letter) {
@@ -60,6 +62,7 @@ class Node {
 class Edge {
     /**
      * Edge constructor - an Enigma machine mapping between letters
+     *
      * @param {number} pos - The rotor position, relative to the beginning of the crib, at this edge
      * @param {number} node1 - Letter at one end (as a number)
      * @param {number} node2 - Letter at the other end
@@ -75,7 +78,8 @@ class Edge {
 
     /**
      * Given the node at one end of this edge, return the other end.
-     * @param node {number} - The node we have
+     *
+     * @param {number} node - The node we have
      * @returns {number}
      */
     getOther(node) {
@@ -90,6 +94,7 @@ class Edge {
 class SharedScrambler {
     /**
      * SharedScrambler constructor.
+     *
      * @param {Object[]} rotors - List of rotors in the shared state _only_.
      * @param {Object} reflector - The reflector in use.
      */
@@ -105,6 +110,7 @@ class SharedScrambler {
     /**
      * Replace the rotors and reflector in this SharedScrambler.
      * This takes care of flushing caches as well.
+     *
      * @param {Object[]} rotors - List of rotors in the shared state _only_.
      * @param {Object} reflector - The reflector in use.
      */
@@ -117,6 +123,7 @@ class SharedScrambler {
 
     /**
      * Step the rotors forward.
+     *
      * @param {number} n - How many rotors to step. This includes the rotors which are not part of
      * the shared state, so should be 2 or more.
      */
@@ -162,6 +169,7 @@ class SharedScrambler {
 
     /**
      * Map a letter through this (partial) scrambler.
+     *
      * @param {number} i - The letter
      * @returns {number}
      */
@@ -178,6 +186,7 @@ class SharedScrambler {
  */
 class Scrambler {
     /** Scrambler constructor.
+     *
      * @param {Object} base - The SharedScrambler whose state this scrambler uses
      * @param {Object} rotor - The non-shared fast rotor in this scrambler
      * @param {number} pos - Position offset from start of crib
@@ -198,6 +207,7 @@ class Scrambler {
     /**
      * Replace the rotor in this scrambler.
      * The position is reset automatically.
+     *
      * @param {Object} rotor - New rotor
      */
     changeRotor(rotor) {
@@ -222,6 +232,7 @@ class Scrambler {
 
     /**
      * Run a letter through the scrambler.
+     *
      * @param {number} i - The letter to transform (as a number)
      * @returns {number}
      */
@@ -241,7 +252,8 @@ class Scrambler {
 
     /**
      * Given one letter in the menu this scrambler maps to, return the other.
-     * @param end {number} - The node we have
+     *
+     * @param {number} end - The node we have
      * @returns {number}
      */
     getOtherEnd(end) {
@@ -255,6 +267,7 @@ class Scrambler {
      * is pressed - this function *does* take this into account.
      * However, as with the rest of the Bombe, it does not take stepping into account - the middle
      * and slow rotors are treated as static.
+     *
      * @return {string}
      */
     getPos() {
@@ -366,6 +379,7 @@ export class BombeMachine {
 
     /**
      * Build Rotor objects from list of rotor wiring strings.
+     *
      * @param {string[]} rotors - List of rotor wiring strings
      */
     initRotors(rotors) {
@@ -379,6 +393,7 @@ export class BombeMachine {
 
     /**
      * Replace the rotors and reflector in all components of this Bombe.
+     *
      * @param {string[]} rotors - List of rotor wiring strings
      * @param {Object} reflector - Reflector object
      */
@@ -393,6 +408,7 @@ export class BombeMachine {
 
     /**
      * If we have a way of sending status messages, do so.
+     *
      * @param {...*} msg - Message to send.
      */
     update(...msg) {
@@ -405,8 +421,9 @@ export class BombeMachine {
      * Recursive depth-first search on the menu graph.
      * This is used to a) isolate unconnected sub-graphs, and b) count the number of loops in each
      * of those graphs.
+     *
      * @param {Object} node - Node object to start the search from
-     * @returns {[number, number, Object, number, Object[]} - loop count, node count, most connected
+     * @returns {[number, number, Object, number, Object[]]} - loop count, node count, most connected
      *      node, order of most connected node, list of edges in this sub-graph
      */
     dfs(node) {
@@ -452,7 +469,8 @@ export class BombeMachine {
      * disallowed states).
      * Finally, we want to identify the most connected node in that graph (as it's the best choice
      * of measurement point).
-     * @returns [Object, Object[]] - the most connected node, and the list of edges in the subgraph
+     *
+     * @returns {[Object, Object[]]} - the most connected node, and the list of edges in the subgraph
      */
     makeMenu() {
         // First, we make a graph of all of the mappings given by the crib
@@ -495,6 +513,7 @@ export class BombeMachine {
     /**
      * Bombe electrical simulation. Energise a wire. For all connected wires (both via the diagonal
      * board and via the scramblers), energise them too, recursively.
+     *
      * @param {number} i - Bombe wire bundle
      * @param {number} j - Bombe stecker hypothesis wire within bundle
      */
@@ -552,6 +571,7 @@ export class BombeMachine {
      * This applies the detected stecker pair if we have one. It does not handle the other
      * steckering or stepping (which is why we limit it to 26 characters, since it's guaranteed to
      * be wrong after that anyway).
+     *
      * @param {string} stecker - Known stecker spec string.
      * @returns {string}
      */
@@ -572,6 +592,7 @@ export class BombeMachine {
 
     /**
      * Format a steckered pair, in sorted order to allow uniquing.
+     *
      * @param {number} a - A letter
      * @param {number} b - Its stecker pair
      * @returns {string}
@@ -594,6 +615,7 @@ export class BombeMachine {
      * we start with an assumed good hypothesis and read out the stecker pair for every letter.
      * On the real hardware that wasn't practical, but fortunately we're not the real hardware, so
      * we don't need to implement the manual checking machine procedure.
+     *
      * @param {number} pair - The stecker pair of the test register.
      * @returns {string} - The empty string for invalid stops, or a plugboard configuration string
      *      containing all known pairs.
@@ -635,6 +657,7 @@ export class BombeMachine {
 
     /**
      * Check to see if the Bombe has stopped. If so, process the stop.
+     *
      * @returns {(undefined|string[3])} - Undefined for no stop, or [rotor settings, plugboard settings, decryption preview]
      */
     checkStop() {
@@ -706,6 +729,7 @@ export class BombeMachine {
      * Having set up the Bombe, do the actual attack run. This tries every possible rotor setting
      * and attempts to logically invalidate them. If it can't, it's added to the list of candidate
      * solutions.
+     *
      * @returns {string[][3]} - list of 3-tuples of candidate rotor setting, plugboard settings, and decryption preview
      */
     run() {

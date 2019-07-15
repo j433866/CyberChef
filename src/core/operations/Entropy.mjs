@@ -101,6 +101,7 @@ class Entropy extends Operation {
      * @param {integer} svgHeight
      * @param {integer} svgWidth
      * @param {object} margins
+     * @param {string} title
      * @param {string} xTitle
      * @param {string} yTitle
      */

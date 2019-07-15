@@ -41,6 +41,7 @@ class HTMLOperation {
     /**
      * Renders the operation in HTML as a stub operation with no ingredients.
      *
+     * @param {boolean} removeIcon
      * @returns {string}
      */
     toStubHtml(removeIcon) {

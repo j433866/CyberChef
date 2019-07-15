@@ -68,12 +68,12 @@ export function getSubkeySize(keySize) {
 }
 
 /**
-* Import private key and unlock if necessary
-*
-* @param {string} privateKey
-* @param {string} [passphrase]
-* @returns {Object}
-*/
+ * Import private key and unlock if necessary
+ *
+ * @param {string} privateKey
+ * @param {string} [passphrase]
+ * @returns {Object}
+ */
 export async function importPrivateKey(privateKey, passphrase) {
     try {
         const key = await promisify(kbpgp.KeyManager.import_from_armored_pgp)({

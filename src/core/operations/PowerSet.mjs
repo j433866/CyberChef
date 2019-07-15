@@ -66,6 +66,7 @@ class PowerSet extends Operation {
 
         /**
          * Decimal to binary function
+         *
          * @param {*} dec
          */
         const toBinary = (dec) => (dec >>> 0).toString(2);

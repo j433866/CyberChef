@@ -1,5 +1,6 @@
 /**
  * Enigma machine tests.
+ *
  * @author s2224834
  * @copyright Crown Copyright 2019
  * @license Apache-2.0

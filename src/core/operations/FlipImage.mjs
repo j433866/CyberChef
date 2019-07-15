@@ -81,6 +81,7 @@ class FlipImage extends Operation {
 
     /**
      * Displays the flipped image using HTML for web apps
+     *
      * @param {ArrayBuffer} data
      * @returns {html}
      */

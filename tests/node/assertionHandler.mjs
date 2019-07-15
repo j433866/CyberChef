@@ -14,6 +14,8 @@
 
 /**
  * Print useful stack on error
+ *
+ * @param {function} run
  */
 const wrapRun = (run) => () => {
     try {
@@ -28,9 +30,10 @@ const wrapRun = (run) => () => {
 /**
  * it - wrapper for assertions to provide a helpful description
  * to the TestRegister
+ *
  * @namespace ApiTests
- * @param {String} description - The description of the test
- * @param {Function} assertion - The test
+ * @param {String} name - The description of the test
+ * @param {Function} run - The test
  *
  * @example
  * // One assertion

@@ -374,6 +374,7 @@ self.getNextInputNum = function(inputNum) {
  * Gets a list of inputNums starting from the provided inputNum.
  * If direction is "left", gets the inputNums higher than the provided number.
  * If direction is "right", gets the inputNums lower than the provided number.
+ *
  * @param {number} inputNum - The inputNum we want to get the neighbours of
  * @param {string} direction - Either "left" or "right". Determines which direction we search for nearby numbers in
  * @returns {number[]}
@@ -675,7 +676,7 @@ self.handleLoaderMessage = function(r) {
 /**
  * Loads the next file using a loaderWorker
  *
- * @param {number} - The loaderWorker which will load the file
+ * @param {number} workerIdx - The loaderWorker which will load the file
  */
 self.loadNextFile = function(workerIdx) {
     if (workerIdx === -1) return;
@@ -785,7 +786,7 @@ self.loadFiles = function(filesData) {
 /**
  * Adds an input to the input dictionary
  *
- * @param {boolean} [changetab=false] - Whether or not to change to the new input
+ * @param {boolean} [changeTab=false] - Whether or not to change to the new input
  * @param {string} type - Either "string" or "file"
  * @param {Object} fileData - Contains information about the file to be added to the input (only used when type is "file")
  * @param {string} fileData.name - The filename of the input being added

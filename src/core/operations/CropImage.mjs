@@ -131,6 +131,7 @@ class CropImage extends Operation {
 
     /**
      * Displays the cropped image using HTML for web apps
+     *
      * @param {ArrayBuffer} data
      * @returns {html}
      */

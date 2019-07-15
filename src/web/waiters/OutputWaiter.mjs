@@ -11,8 +11,8 @@ import FileSaver from "file-saver";
 import ZipWorker from "worker-loader?inline&fallback=false!../workers/ZipWorker";
 
 /**
-  * Waiter to handle events related to the output
-  */
+ * Waiter to handle events related to the output
+ */
 class OutputWaiter {
 
     /**
@@ -45,7 +45,7 @@ class OutputWaiter {
     /**
      * Gets the dish object for an output.
      *
-     * @param inputNum - The inputNum of the output to get the dish of
+     * @param {number | string} inputNum - The inputNum of the output to get the dish of
      * @returns {Dish}
      */
     getOutputDish(inputNum) {
@@ -617,6 +617,8 @@ class OutputWaiter {
 
     /**
      * Handle messages sent back by the ZipWorker
+     *
+     * @param {MessageEvent} e
      */
     handleZipWorkerMessage(e) {
         const r = e.data;
@@ -667,7 +669,7 @@ class OutputWaiter {
      * Changes the active tab
      *
      * @param {number} inputNum
-     * @param {boolean} [changeInput = false]
+     * @param {boolean} [changeInput=false]
      */
     changeTab(inputNum, changeInput = false) {
         if (!this.outputExists(inputNum)) return;
@@ -811,8 +813,9 @@ class OutputWaiter {
 
     /**
      * Generates a list of the nearby inputNums
-     * @param inputNum
-     * @param direction
+     *
+     * @param {string|number} inputNum
+     * @param {string} direction
      */
     getNearbyNums(inputNum, direction) {
         const nums = [];
@@ -930,6 +933,7 @@ class OutputWaiter {
 
     /**
      * Redraw the entire tab bar to remove any outdated tabs
+     *
      * @param {number} activeTab
      * @param {string} direction - Either "left" or "right"
      */
@@ -1258,6 +1262,8 @@ class OutputWaiter {
     /**
      * Handler for maximise output click events.
      * Resizes the output frame to be as large as possible, or restores it to its original size.
+     *
+     * @param {event} e
      */
     maximiseOutputClick(e) {
         const el = e.target.id === "maximise-output" ? e.target : e.target.parentNode;

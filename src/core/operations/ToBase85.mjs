@@ -44,7 +44,7 @@ class ToBase85 extends Operation {
      * @param {byteArray} input
      * @param {Object[]} args
      * @returns {string}
-    */
+     */
     run(input, args) {
         const alphabet = Utils.expandAlphRange(args[0]).join(""),
             encoding = alphabetName(alphabet),

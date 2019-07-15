@@ -15,10 +15,11 @@ import Dish from "../core/Dish.mjs";
 class NodeDish extends Dish {
 
     /**
-    * Create a Dish
-    * @param {any} inputOrDish - The dish input
-    * @param {String|Number} - The dish type, as enum or string
-    */
+     * Create a Dish
+     *
+     * @param {any} inputOrDish - The dish input
+     * @param {String|Number} type - The dish type, as enum or string
+     */
     constructor(inputOrDish=null, type=null) {
 
         // Allow `fs` file input:
@@ -44,7 +45,8 @@ class NodeDish extends Dish {
 
     /**
      * alias for get
-     * @param args see get args
+     *
+     * @param {*} args see get args
      */
     to(...args) {
         return this.get(...args);
@@ -60,7 +62,7 @@ class NodeDish extends Dish {
     /**
      * What we want to log to the console.
      */
-    [util.inspect.custom](depth, options) {
+    [util.inspect.custom]() {
         return this.presentAs(Dish.typeEnum("string"));
     }
 

@@ -21,6 +21,16 @@ class Chef {
         this.dish = new Dish();
     }
 
+    /**
+     * Bake response
+     *
+     * @typedef {Object} response
+     * @property {string} result - The output of the recipe
+     * @property {string} type - The data type of the result
+     * @property {number} progress - The position that we have got to in the recipe
+     * @property {number} duration - The number of ms it took to execute the recipe
+     * @property {number} error - The error object thrown by a failed operation (false if no error)
+     */
 
     /**
      * Runs the recipe over the input.
@@ -30,13 +40,8 @@ class Chef {
      * @param {Object} options - The options object storing various user choices
      * @param {boolean} options.attempHighlight - Whether or not to attempt highlighting
      *
-     * @returns {Object} response
-     * @returns {string} response.result - The output of the recipe
-     * @returns {string} response.type - The data type of the result
-     * @returns {number} response.progress - The position that we have got to in the recipe
-     * @returns {number} response.duration - The number of ms it took to execute the recipe
-     * @returns {number} response.error - The error object thrown by a failed operation (false if no error)
-    */
+     * @returns {response} response
+     */
     async bake(input, recipeConfig, options) {
         log.debug("Chef baking");
         const startTime = new Date().getTime(),
@@ -106,7 +111,7 @@ class Chef {
      *
      * @param {Object[]} recipeConfig - The recipe configuration object
      * @returns {number} The time it took to run the silent bake in milliseconds.
-    */
+     */
     silentBake(recipeConfig) {
         log.debug("Running silent bake");
 

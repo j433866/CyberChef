@@ -38,6 +38,7 @@ class TestRegister {
 
     /**
      * Add a list of api tests to the register
+     *
      * @param {Object[]} tests
      */
     addApiTests(tests) {

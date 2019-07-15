@@ -130,6 +130,7 @@ class CoverImage extends Operation {
 
     /**
      * Displays the covered image using HTML for web apps
+     *
      * @param {ArrayBuffer} data
      * @returns {html}
      */

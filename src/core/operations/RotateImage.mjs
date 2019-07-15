@@ -75,6 +75,7 @@ class RotateImage extends Operation {
 
     /**
      * Displays the rotated image using HTML for web apps
+     *
      * @param {ArrayBuffer} data
      * @returns {html}
      */

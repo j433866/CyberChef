@@ -69,21 +69,30 @@ class CartesianProduct extends Operation {
     }
 
     /**
-    * Return the cartesian product of the two inputted sets.
-    *
-    * @param {Object[]} a
-    * @param {Object[]} b
-    * @param {Object[]} c
-    * @returns {string}
-    */
+     * Return the cartesian product of the two inputted sets.
+     *
+     * @param {Object[]} a
+     * @param {Object[]} b
+     * @param {Object[]} c
+     * @returns {string}
+     */
     runCartesianProduct(a, b, ...c) {
         /**
          * https://stackoverflow.com/a/43053803/7200497
+         *
+         * @param {Object[]} a
+         * @param {Object[]} b
+         *
          * @returns {Object[]}
          */
         const f = (a, b) => [].concat(...a.map(d => b.map(e => [].concat(d, e))));
         /**
          * https://stackoverflow.com/a/43053803/7200497
+         *
+         * @param {Object[]} a
+         * @param {Object[]} b
+         * @param {Object[]} c
+         *
          * @returns {Object[][]}
          */
         const cartesian = (a, b, ...c) => (b ? cartesian(f(a, b), ...c) : a);

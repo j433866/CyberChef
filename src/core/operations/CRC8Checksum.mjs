@@ -49,7 +49,7 @@ class CRC8Checksum extends Operation {
     /**
      * Generates the pre-computed lookup table for byte division
      *
-     * @param polynomial
+     * @param {number} polynomial
      */
     calculateCRC8LookupTable(polynomial) {
         const crc8Table = new Uint8Array(256);
@@ -108,6 +108,7 @@ class CRC8Checksum extends Operation {
      * Reverse the bits for a given input byte.
      *
      * @param {number} input
+     * @param {number} hashSize
      */
     reverseBits(input, hashSize) {
         let reversedByte = 0;

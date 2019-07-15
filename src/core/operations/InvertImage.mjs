@@ -67,6 +67,7 @@ class InvertImage extends Operation {
 
     /**
      * Displays the inverted image using HTML for web apps
+     *
      * @param {ArrayBuffer} data
      * @returns {html}
      */

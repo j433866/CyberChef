@@ -7,6 +7,7 @@
  *
  * @constructor
  * @param {App} app - The main view object for CyberChef.
+ * @param {Manager} manager - The CyberChef event manager.
  */
 const OptionsWaiter = function(app, manager) {
     this.app = app;

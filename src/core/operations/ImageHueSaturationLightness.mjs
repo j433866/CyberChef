@@ -118,6 +118,7 @@ class ImageHueSaturationLightness extends Operation {
 
     /**
      * Displays the image using HTML for web apps
+     *
      * @param {ArrayBuffer} data
      * @returns {html}
      */

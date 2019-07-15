@@ -14,7 +14,6 @@ class DishFile extends DishType {
 
     /**
      * convert the given value to an ArrayBuffer
-     * @param {File} value
      */
     static toArrayBuffer() {
         DishFile.checkForValue(this.value);

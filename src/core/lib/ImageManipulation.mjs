@@ -13,7 +13,6 @@ import OperationError from "../errors/OperationError.mjs";
  *
  * @param {jimp} input
  * @param {number} radius
- * @param {boolean} fast
  * @returns {jimp}
  */
 export function gaussianBlur (input, radius) {

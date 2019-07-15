@@ -24,8 +24,9 @@ import ExludedOperationError from "../core/errors/ExcludedOperationError.mjs";
  * clear to the user.
  *
  * Argument name matching is case and space insensitive
+ *
  * @private
- * @param {Object[]} originalArgs - the operation-s args list
+ * @param {Object[]} opArgsList - the operation-s args list
  * @param {Object} newArgs - any inputted args
  */
 function transformArgs(opArgsList, newArgs) {
@@ -95,7 +96,9 @@ function transformArgs(opArgsList, newArgs) {
 
 /**
  * Ensure an input is a SyncDish object.
- * @param input
+ *
+ * @param {*} input
+ * @returns {NodeDish}
  */
 function ensureIsDish(input) {
     if (!input) {
@@ -113,6 +116,7 @@ function ensureIsDish(input) {
 /**
  * prepareOp: transform args, make input the right type.
  * Also convert any Buffers to ArrayBuffers.
+ *
  * @param opInstance - instance of the operation
  * @param input - operation input
  * @param args - operation args
@@ -135,7 +139,7 @@ function prepareOp(opInstance, input, args) {
  *
  * @param {Operation} op - the operation to extract args from
  * @returns {{}} - arrays of options for args.
-*/
+ */
 function createArgInfo(op) {
     const result = {};
     op.args.forEach((a) => {
@@ -167,8 +171,9 @@ function createArgInfo(op) {
  * Checks to see if run function is async or not.
  * new Operation().run() becomes operation()
  * Perform type conversion on input
+ *
  * @private
- * @param {Operation} Operation
+ * @param {Operation} OpClass
  * @returns {Function} The operation's run function, wrapped in
  * some type conversion logic
  */
@@ -184,6 +189,7 @@ export function _wrap(OpClass) {
     if (isAsync) {
         /**
          * Async wrapped operation run function
+         *
          * @param {*} input
          * @param {Object | String[]} args - either in Object or normal args array
          * @returns {Promise<SyncDish>} operation's output, on a Dish.
@@ -200,6 +206,7 @@ export function _wrap(OpClass) {
     } else {
         /**
          * wrapped operation run function
+         *
          * @param {*} input
          * @param {Object | String[]} args - either in Object or normal args array
          * @returns {SyncDish} operation's output, on a Dish.
@@ -293,6 +300,7 @@ export function help(input) {
 
 /**
  * bake [Wrapped] - Perform an array of operations on some input.
+ *
  * @returns {Function}
  */
 export function bake(){
@@ -318,12 +326,13 @@ export function bake(){
  * explainExcludedFunction
  *
  * Explain that the given operation is not included in the Node.js version.
+ *
  * @param {String} name - name of operation
  */
 export function _explainExludedFunction(name) {
     /**
      * Throw new error type with useful message.
-    */
+     */
     const func = () => {
         throw new ExludedOperationError(`Sorry, the ${name} operation is not available in the Node.js version of CyberChef.`);
     };

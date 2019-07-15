@@ -93,6 +93,7 @@ class Bombe extends Operation {
 
     /**
      * Format and send a status update message.
+     *
      * @param {number} nLoops - Number of loops in the menu
      * @param {number} nStops - How many stops so far
      * @param {number} progress - Progress (as a float in the range 0..1)

@@ -134,6 +134,9 @@ async function bake(data) {
 
 /**
  * Silent baking handler
+ *
+ * @param {Object} data
+ * @param {Object[]} data.recipeConfig
  */
 function silentBake(data) {
     const duration = self.chef.silentBake(data.recipeConfig);
@@ -147,6 +150,10 @@ function silentBake(data) {
 
 /**
  * Translates the dish to a given type.
+ *
+ * @param {Object} data
+ * @param {Dish} data.dish
+ * @param {String} data.type
  */
 async function getDishAs(data) {
     const value = await self.chef.getDishAs(data.dish, data.type);

@@ -72,16 +72,23 @@ function bytesMatch(sig, buf, offset=0) {
 
 
 /**
+ * detectFileType response. Contains a list of detected types.
+ *
+ * @typedef {Object[]} types
+ * @property {string} type.name - Name of the file type
+ * @property {string} type.ext - File extension
+ * @property {string} type.mime - Mime type
+ * @property {string} type.desc - Description
+ */
+
+
+/**
  * Given a buffer, detects magic byte sequences at specific positions and returns the
  * extension and mime type.
  *
  * @param {Uint8Array} buf
  * @param {string[]} [categories=All] - Which categories of file to look for
- * @returns {Object[]} types
- * @returns {string} type.name - Name of file type
- * @returns {string} type.ext - File extension
- * @returns {string} type.mime - Mime type
- * @returns {string} [type.desc] - Description
+ * @returns {types} types
  */
 export function detectFileType(buf, categories=Object.keys(FILE_SIGNATURES)) {
     if (!(buf && buf.length > 1)) {
@@ -111,18 +118,21 @@ export function detectFileType(buf, categories=Object.keys(FILE_SIGNATURES)) {
 
 
 /**
+ * FoundFiles object.
+ *
+ * @typedef {Object[]} foundFiles
+ * @property {number} offset - The position in the buffer at which this file was found
+ * @property {types} fileDetails
+ */
+
+
+/**
  * Given a buffer, searches for magic byte sequences at all possible positions and returns
  * the extensions and mime types.
  *
  * @param {Uint8Array} buf
  * @param {string[]} [categories=All] - Which categories of file to look for
- * @returns {Object[]} foundFiles
- * @returns {number} foundFiles.offset - The position in the buffer at which this file was found
- * @returns {Object} foundFiles.fileDetails
- * @returns {string} foundFiles.fileDetails.name - Name of file type
- * @returns {string} foundFiles.fileDetails.ext - File extension
- * @returns {string} foundFiles.fileDetails.mime - Mime type
- * @returns {string} [foundFiles.fileDetails.desc] - Description
+ * @returns {foundFiles} foundFiles
  */
 export function scanForFileTypes(buf, categories=Object.keys(FILE_SIGNATURES)) {
     if (!(buf && buf.length > 1)) {

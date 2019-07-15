@@ -167,8 +167,6 @@ class Operation {
 
     /**
      * Gets the args for the current operation.
-     *
-     * @param {Object[]} conf
      */
     get args() {
         return this._ingList.map(ing => {

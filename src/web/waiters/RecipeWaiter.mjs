@@ -207,6 +207,7 @@ class RecipeWaiter {
     /**
      * Handler for ingredient change events.
      *
+     * @param {event} e
      * @fires Manager#statechange
      */
     ingChange(e) {

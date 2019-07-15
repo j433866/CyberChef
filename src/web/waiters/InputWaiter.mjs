@@ -591,7 +591,6 @@ class InputWaiter {
      * @param {number} inputNum - The inputNum of the data to get
      * @param {boolean} getObj - If true, get the actual data object of the input instead of just the value
      * @param {Function} callback - The callback to execute when the input is returned
-     * @returns {ArrayBuffer | string | object}
      */
     getInput(inputNum, getObj, callback) {
         const id = this.callbackID++;
@@ -624,6 +623,8 @@ class InputWaiter {
     /**
      * Gets a list of inputNums from the inputWorker, and sends
      * them back to the specified callback
+     *
+     * @param {Function} callback
      */
     getNums(callback) {
         const id = this.callbackID++;
@@ -864,6 +865,7 @@ class InputWaiter {
     /**
      * Display the loaded files information in the input header.
      * Also, sets the background of the Input header to be a progress bar
+     *
      * @param {object} loadedData - Object containing the loading information
      * @param {number} loadedData.pending - How many files are pending (not loading / loaded)
      * @param {number} loadedData.loading - How many files are being loaded
@@ -1046,6 +1048,7 @@ class InputWaiter {
 
     /**
      * Sends a message to the inputWorker to add a new input.
+     *
      * @param {boolean} [changeTab=false] - If true, changes the tab to the new input
      */
     addInput(changeTab=false) {

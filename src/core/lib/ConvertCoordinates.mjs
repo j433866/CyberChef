@@ -390,6 +390,7 @@ function convDDMToDD (degrees, minutes, precision) {
  * Convert Decimal Degrees to Decimal Degrees
  *
  * Doesn't affect the input, just puts it into an object
+ *
  * @param {number} degrees - The input degrees to be converted
  * @param {number} precision - The precision which the result should be rounded to
  * @returns {{string: string, degrees: number}} An object containing the raw converted value (obj.degrees), and a formatted string version (obj.string)

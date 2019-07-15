@@ -29,7 +29,7 @@ const statusToIcon = function statusToIcon(status) {
  * Displays a given test result in the console.
  * Counts test statuses.
  *
- * @param {Object} testStatusCounts
+ * @param {Object} testStatus
  * @param {Object} testResult
  */
 function handleTestResult(testStatus, testResult) {

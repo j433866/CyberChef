@@ -658,8 +658,7 @@ class Utils {
      * Removes all HTML (or XML) tags from the input string.
      *
      * @param {string} htmlStr
-     * @param {boolean} [removeScriptAndStyle=false]
-     *     - Flag to specify whether to remove entire script or style blocks
+     * @param {boolean} [removeScriptAndStyle=false] - Flag to specify whether to remove entire script or style blocks
      * @returns {string}
      *
      * @example
@@ -679,7 +678,7 @@ class Utils {
      * https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet
      *
      * @param {string} str
-     * @returns string
+     * @returns {string}
      *
      * @example
      * // return "A &lt;script&gt; tag"
@@ -706,7 +705,7 @@ class Utils {
      * Unescapes HTML tags in a string to make them render again.
      *
      * @param {string} str
-     * @returns string
+     * @returns {string}
      *
      * @example
      * // return "A <script> tag"
@@ -1155,6 +1154,7 @@ class Utils {
 
 /**
  * Check whether the code is running in a Node.js environment
+ *
  * @returns {boolean}
  */
 export function isNodeEnvironment() {
@@ -1163,16 +1163,18 @@ export function isNodeEnvironment() {
 
 /**
  * Check whether the code is running in a web environment
+ *
  * @returns {boolean}
-*/
+ */
 export function isWebEnvironment() {
     return typeof window === "object";
 }
 
 /**
  * Check whether the code is running in a worker
+ *
  * @returns {boolean}
-*/
+ */
 export function isWorkerEnvironment() {
     return typeof importScripts === "function";
 }

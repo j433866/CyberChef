@@ -2017,15 +2017,20 @@ function parseHuffmanBlock(stream, litTab, distTab) {
     }
 }
 
+/**
+ * Huffman table result
+ *
+ * @typedef {Array} HuffmanTable
+ * @property {Uint32Array} table
+ * @property {number} maxCodeLength
+ * @property {number} minCodeLength
+ */
 
 /**
  * Builds a Huffman table given the relevant code lengths
  *
  * @param {Array} lengths
- * @returns {Array} result
- * @returns {Uint32Array} result.table
- * @returns {number} result.maxCodeLength
- * @returns {number} result.minCodeLength
+ * @returns {HuffmanTable} result
  */
 function buildHuffmanTable(lengths) {
     const maxCodeLength = Math.max.apply(Math, lengths);

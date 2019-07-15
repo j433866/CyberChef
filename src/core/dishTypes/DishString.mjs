@@ -23,6 +23,7 @@ class DishString extends DishType {
 
     /**
      * convert the given value from a ArrayBuffer
+     *
      * @param {boolean} notUTF8
      */
     static fromArrayBuffer(notUTF8) {

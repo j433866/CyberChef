@@ -99,7 +99,7 @@ class OperationsWaiter {
     /**
      * Filters operations based on the search string and returns the matching ones.
      *
-     * @param {string} searchStr
+     * @param {string} inStr
      * @param {boolean} highlight - Whether or not to highlight the matching string in the operation
      *   name and description
      * @returns {string[]}

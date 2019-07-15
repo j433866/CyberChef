@@ -16,7 +16,8 @@ import { isWorkerEnvironment } from "../Utils.mjs";
 
 /**
  * Convenience method for flattening the preset ROTORS object into a newline-separated string.
- * @param {Object[]} - Preset rotors object
+ *
+ * @param {Object[]} rotors - Preset rotors object
  * @param {number} s - Start index
  * @param {number} n - End index
  * @returns {string}
@@ -31,9 +32,10 @@ function rotorsFormat(rotors, s, n) {
 
 /**
  * Combinatorics choose function
+ *
  * @param {number} n
  * @param {number} k
- * @returns number
+ * @returns {number}
  */
 function choose(n, k) {
     let res = 1;
@@ -139,9 +141,11 @@ class MultipleBombe extends Operation {
 
     /**
      * Format and send a status update message.
+     *
      * @param {number} nLoops - Number of loops in the menu
      * @param {number} nStops - How many stops so far
      * @param {number} progress - Progress (as a float in the range 0..1)
+     * @param {number} start - The start time of the Bombe run
      */
     updateStatus(nLoops, nStops, progress, start) {
         const elapsed = new Date().getTime() - start;
@@ -156,6 +160,7 @@ class MultipleBombe extends Operation {
     /**
      * Early rotor description string validation.
      * Drops stepping information.
+     *
      * @param {string} rstr - The rotor description string
      * @returns {string} - Rotor description with stepping stripped, if any
      */

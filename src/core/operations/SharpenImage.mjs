@@ -149,6 +149,7 @@ class SharpenImage extends Operation {
 
     /**
      * Displays the sharpened image using HTML for web apps
+     *
      * @param {ArrayBuffer} data
      * @returns {html}
      */

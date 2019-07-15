@@ -169,12 +169,9 @@ class Recipe  {
      * Executes each operation in the recipe over the given Dish.
      *
      * @param {Dish} dish
-     * @param {number} [startFrom=0]
-     *     - The index of the Operation to start executing from
-     * @param {number} [forkState={}]
-     *     - If this is a forked recipe, the state of the recipe up to this point
-     * @returns {number}
-     *     - The final progress through the recipe
+     * @param {number} [startFrom=0] - The index of the Operation to start executing from
+     * @param {number} [forkState={}] - If this is a forked recipe, the state of the recipe up to this point
+     * @returns {number} - The final progress through the recipe
      */
     async execute(dish, startFrom=0, forkState={}) {
         let op, input, output,
@@ -299,13 +296,20 @@ class Recipe  {
 
 
     /**
+     * Highlight list object
+     *
+     * @typedef {Object} highlight
+     * @property {function} f
+     * @property {function} b
+     * @property {Object[]} args
+     */
+
+
+    /**
      * Generates a list of all the highlight functions assigned to operations in the recipe, if the
      * entire recipe supports highlighting.
      *
-     * @returns {Object[]} highlights
-     * @returns {function} highlights[].f
-     * @returns {function} highlights[].b
-     * @returns {Object[]} highlights[].args
+     * @returns {highlight[]} highlights
      */
     async generateHighlightList() {
         await this._hydrateOpList();

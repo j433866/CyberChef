@@ -6,12 +6,14 @@
 
 /**
  * HighlighterWaiter data type enum for the input.
+ *
  * @enum
  */
 const INPUT = 0;
 
 /**
  * HighlighterWaiter data type enum for the output.
+ *
  * @enum
  */
 const OUTPUT = 1;
@@ -81,12 +83,19 @@ class HighlighterWaiter {
 
 
     /**
+     * pos object
+     *
+     * @typedef {Object} pos
+     * @property {number} start
+     * @property {number} end
+     */
+
+
+    /**
      * Gets the current selection offsets in the output HTML, ignoring HTML tags.
      *
      * @private
-     * @returns {Object} pos
-     * @returns {number} pos.start
-     * @returns {number} pos.end
+     * @returns {pos} pos
      */
     _getOutputHtmlSelectionOffsets() {
         const sel = window.getSelection();

@@ -116,6 +116,9 @@ class ToTable extends Operation {
 
             /**
              * Outputs a row of correctly padded cells.
+             *
+             * @param {string[]} row
+             * @param {number[]} longestCells
              */
             function outputRow(row, longestCells) {
                 let rowOutput = verticalBorder;
@@ -129,6 +132,8 @@ class ToTable extends Operation {
             /**
              * Outputs a horizontal border with a different character where
              * the horizontal border meets a vertical border.
+             *
+             * @param {string[]} longestCells
              */
             function outputHorizontalBorder(longestCells) {
                 let rowOutput = crossBorder;

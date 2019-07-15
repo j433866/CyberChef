@@ -41,12 +41,14 @@ class PHPDeserialize extends Operation {
     run(input, args) {
         /**
          * Recursive method for deserializing.
+         *
          * @returns {*}
          */
         function handleInput() {
             /**
              * Read `length` characters from the input, shifting them out the input.
-             * @param length
+             *
+             * @param {number} length
              * @returns {string}
              */
             function read(length) {
@@ -63,7 +65,8 @@ class PHPDeserialize extends Operation {
 
             /**
              * Read characters from the input until `until` is found.
-             * @param until
+             *
+             * @param {string} until
              * @returns {string}
              */
             function readUntil(until) {
@@ -82,7 +85,8 @@ class PHPDeserialize extends Operation {
 
             /**
              * Read characters from the input that must be equal to `expect`
-             * @param expect
+             *
+             * @param {string} expect
              * @returns {string}
              */
             function expect(expect) {
@@ -95,6 +99,7 @@ class PHPDeserialize extends Operation {
 
             /**
              * Helper function to handle deserialized arrays.
+             *
              * @returns {Array}
              */
             function handleArray() {

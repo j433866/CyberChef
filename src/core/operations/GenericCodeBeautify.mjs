@@ -147,6 +147,10 @@ class GenericCodeBeautify extends Operation {
 
         /**
          * Replaces a matched token with a placeholder value.
+         *
+         * @param {string} str
+         * @param {RegExpExecArray} match
+         * @param {number} t
          */
         function preserveToken(str, match, t) {
             preservedTokens[t] = match[0];

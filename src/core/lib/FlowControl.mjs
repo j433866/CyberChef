@@ -9,8 +9,8 @@
 /**
  * Returns the index of a label.
  *
- * @param {Object} state - The current state of the recipe.
  * @param {string} name - The label name to look for.
+ * @param {Object} state - The current state of the recipe.
  * @returns {number}
  */
 export function getLabelIndex(name, state) {

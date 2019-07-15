@@ -264,8 +264,8 @@ class HexDensityChart extends Operation {
     /**
      * Hex Bin chart operation.
      *
-     * @param {Object[]} - centres
-     * @param {number} - radius
+     * @param {Object[]} centres
+     * @param {number} radius
      * @returns {Object[]}
      */
     getEmptyHexagons(centres, radius) {

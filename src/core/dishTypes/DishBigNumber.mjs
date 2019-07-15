@@ -15,7 +15,6 @@ class DishBigNumber extends DishType {
 
     /**
      * convert the given value to a ArrayBuffer
-     * @param {BigNumber} value
      */
     static toArrayBuffer() {
         DishBigNumber.checkForValue(this.value);
@@ -24,6 +23,7 @@ class DishBigNumber extends DishType {
 
     /**
      * convert the given value from a ArrayBuffer
+     *
      * @param {boolean} notUTF8
      */
     static fromArrayBuffer(notUTF8) {

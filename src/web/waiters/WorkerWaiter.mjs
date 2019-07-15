@@ -672,7 +672,6 @@ class WorkerWaiter {
      * @param {Dish} dish
      * @param {number} maxLength
      * @param {Function} callback
-     * @returns {string}
      */
     getDishTitle(dish, maxLength, callback) {
         const id = this.callbackID++;

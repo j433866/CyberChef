@@ -29,7 +29,8 @@ const capitalise = function capitalise(str) {
 
 /**
  * SomeName => someName
- * @param {String} name - string to be altered
+ *
+ * @param {String} str - string to be altered
  * @returns {String} decapitalised
  */
 export function decapitalise(str) {
@@ -48,7 +49,9 @@ export function decapitalise(str) {
 
 /**
  * Remove strings surrounded with [] from the given array.
-*/
+ *
+ * @param {Object[]} array
+ */
 export function removeSubheadingsFromArray(array) {
     if (Array.isArray(array)) {
         return array.filter((i) => {
@@ -63,7 +66,8 @@ export function removeSubheadingsFromArray(array) {
 
 /**
  * Remove spaces, make lower case.
- * @param str
+ *
+ * @param {string} str
  */
 export function sanitise(str) {
     return str.replace(/ /g, "").toLowerCase();
@@ -73,7 +77,9 @@ export function sanitise(str) {
 /**
  * sonething like this => somethingLikeThis
  * ABC a sentence => ABCASentence
-*/
+ *
+ * @param {string} str
+ */
 export function sentenceToCamelCase(str) {
     return str.split(" ")
         .map((s, index) => {

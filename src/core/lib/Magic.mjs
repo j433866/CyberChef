@@ -85,12 +85,18 @@ class Magic {
     }
 
     /**
+     * detectFileType response
+     *
+     * @typedef {Object} type
+     * @property {string} ext - File extension
+     * @property {string} mime - Mime type
+     * @property {string} [desc] - Description
+     */
+
+    /**
      * Detects any matching file types for the input.
      *
-     * @returns {Object} type
-     * @returns {string} type.ext - File extension
-     * @returns {string} type.mime - Mime type
-     * @returns {string} [type.desc] - Description
+     * @returns {type} type
      */
     detectFileType() {
         const fileType = detectFileType(this.inputBuffer);
@@ -233,6 +239,8 @@ class Magic {
 
         /**
          * Test character encodings and add them if they change the data.
+         *
+         * @param {string} op - The name of the operation to run
          */
         const testEnc = async op => {
             for (let i = 0; i < encodings.length; i++) {

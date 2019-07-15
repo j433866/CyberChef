@@ -156,6 +156,8 @@ class ControlsWaiter {
 
     /**
      * Handler for changes made to the save dialog text area. Re-initialises the save link.
+     *
+     * @param {event} e
      */
     saveTextChange(e) {
         try {
@@ -302,6 +304,8 @@ class ControlsWaiter {
 
     /**
      * Displays the selected recipe in the load text box.
+     *
+     * @param {event} e
      */
     loadNameChange(e) {
         if (!this.app.isLocalStorageAvailable()) return false;

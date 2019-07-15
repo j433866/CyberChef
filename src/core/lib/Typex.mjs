@@ -53,6 +53,7 @@ export class TypexMachine extends Enigma.EnigmaBase {
      * @param {Object[]} rotors - List of Rotors.
      * @param {Object} reflector - A Reflector.
      * @param {Plugboard} plugboard - A Plugboard.
+     * @param {string} keyboard - Keyboard emulation option
      */
     constructor(rotors, reflector, plugboard, keyboard) {
         super(rotors, reflector, plugboard);
@@ -150,7 +151,7 @@ export class Rotor extends Enigma.Rotor {
      * @param {string} steps - A 0..26 character string of stepping points.
      * @param {bool} reversed - Whether to reverse the rotor.
      * @param {char} ringSetting - Ring setting of the rotor.
-     * @param {char} initialPosition - The initial position of the rotor.
+     * @param {char} initialPos - The initial position of the rotor.
      */
     constructor(wiring, steps, reversed, ringSetting, initialPos) {
         let wiringMod = wiring;

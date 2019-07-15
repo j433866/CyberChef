@@ -9,7 +9,7 @@ class ExcludedOperationError extends Error {
     /**
      * Standard error constructor. Adds no new behaviour.
      *
-     * @param args - Standard error args
+     * @param {*} args - Standard error args
      */
     constructor(...args) {
         super(...args);
