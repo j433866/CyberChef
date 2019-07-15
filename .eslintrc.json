@@ -83,7 +83,6 @@
         "no-var": "error",
         "prefer-const": "error",
         "jsdoc/check-alignment": ["error"],
-        "jsdoc/check-indentation": ["error"],
         "jsdoc/check-param-names": ["error"],
         "jsdoc/newline-after-description": ["error"],
         "jsdoc/require-returns-check": ["error"],
